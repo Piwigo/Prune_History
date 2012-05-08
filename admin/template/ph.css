@@ -14,3 +14,13 @@
     list-style-type: none;
     margin-bottom: 0.5em;
 }
+
+.save P, .save FIELDSET {
+    display: block;
+    float: right;
+    margin-left: 1em;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}

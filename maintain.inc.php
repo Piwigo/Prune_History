@@ -25,6 +25,8 @@ function plugin_install()
   // -------------------------------------------------
   $defaultPH[0] = $version;                                  // Prune History version
   $defaultPH[1] = 'false';                                   // Enable automated prune
+  $defaultPH[2] = '0';                                       // Range
+  $defaultPH[3] = '0';                                       // Value (Year, month, day)
 
   // Create Prune History conf if not already exists
   // ------------------------------------------------

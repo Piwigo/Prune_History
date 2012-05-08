@@ -17,10 +17,12 @@ load_language('plugin.lang', PH_PATH);
 
 $page['global'] = array();
 $range = array();
+$dump_download = '';
 
-// +-----------------------------------------------------------------------+
-// |                      Getting plugin version                           |
-// +-----------------------------------------------------------------------+
+
+// +-------------------------------------------------------------------+
+// |                      Get plugin version and name                  |
+// +-------------------------------------------------------------------+
 $plugin =  PHInfos(PH_PATH);
 $version = $plugin['version'];
 $name = $plugin['name'];
@@ -44,6 +46,60 @@ if (isset($_POST['submit']) and isset($_POST['PH_AutoPrune']) and isset($_POST['
   array_push($page['infos'], l10n('PH_save_config'));
 }
 
+
+// +--------------------------------------------------------------------+
+// |                     Saving history tables                          |
+// +--------------------------------------------------------------------+
+if (isset($_POST['save']))
+{
+  $dump_download = (isset($_POST['dump_download'])) ? 'true' : 'false';
+    
+  if(PH_dump($dump_download) and $dump_download == 'false')
+  {
+    array_push($page['infos'], l10n('PH_Dump_OK'));
+  }
+  else
+  {
+    array_push($page['errors'], l10n('PH_Dump_NOK'));
+  }
+}
+
+
+// +--------------------------------------------------------------------+
+// |             Restoring backed up history tables                     |
+// +--------------------------------------------------------------------+
+if (isset($_POST['restore']))
+{
+  $Backup_File = PH_PATH.'/include/backup/PH_Historybackup.sql';
+
+  if (file_exists($Backup_File) and $file = file($Backup_File, FILE_IGNORE_NEW_LINES) and !empty($file))
+  {
+    // Check backup file version
+    // -------------------------
+    if ($file[0] == "-- ".$version." --")
+    {
+      $restore = PH_Restore_backup_file();
+      if(empty($restore))
+      {
+        array_push($page['infos'], l10n('PH_Restoration_OK'));
+      }
+      else
+      {
+        array_push($page['errors'], l10n('PH_Restoration_NOK'));
+      }
+    }
+    else array_push($page['errors'], l10n('PH_Bad_version_backup'));
+  }
+  else
+  {
+    array_push($page['errors'], l10n('PH_No_Backup_File'));
+  }
+}
+
+
+// +--------------------------------------------------------------------+
+// |                      Manual prune settings                         |
+// +--------------------------------------------------------------------+
 $conf_PH = unserialize($conf['PruneHistory']);
 
 // Manual prune
@@ -86,6 +142,7 @@ else
   $_POST['start_day']   = $_POST['end_day']   = date('j');
 }
 
+
 // +-----------------------------------------------------------------------+
 // |                           templates init                              |
 // +-----------------------------------------------------------------------+
@@ -103,6 +160,7 @@ $template->assign(
     'PWG_ROOT_PATH'              => PHPWG_ROOT_PATH,
     'PH_NAME'                    => $name,
     'PH_VERSION'                 => $version,
+    'PH_DUMP_DOWNLOAD'           => $dump_download,
 		'PH_AUTOPRUNE_TRUE'          => $conf_PH[1]=='true' ? 'checked="checked"' : '' ,
 		'PH_AUTOPRUNE_FALSE'         => $conf_PH[1]=='false' ? 'checked="checked"' : '' ,
     'PH_RANGE_VALUE'             => $conf_PH[2],
@@ -117,6 +175,7 @@ $template->assign(
     'END_YEAR'                   => @$_POST['end_year'],
   )
 );
+
 
 // +-----------------------------------------------------------------------+
 // |                           templates display                           |

@@ -25,12 +25,35 @@ jQuery().ready(function()
   <h2>{$PH_NAME} {$PH_VERSION}</h2>
 </div>
 
-<fieldset>
+<fieldset class="save">
   <ul>
     <li>
       <label class="cluetip" title="{'PH_ManualPrune_title'|translate}|{'PH_ManualPrune_title_d'|translate}">
         {'PH_ManualPrune_title'|@translate}
       </label>
+
+      <fieldset class="save">
+      <div style="text-align: center; text-transform: uppercase;">
+      <label class="cluetip" title="{'PH_Save_Title'|translate}|{'PH_Save_Title_d'|translate}">
+        {'PH_Save_Title'|@translate}
+      </label>
+      </div>
+      <form method="post" action="" class="general">
+        <p>
+          {'PH_Dump_Download'|@translate}&nbsp;
+            <input type="checkbox" name="dump_download" value="true" {$PH_DUMP_DOWNLOAD}><br><br>
+            <input class="submit" type="submit" value="{'PH_Save'|@translate}" name="save" {$TAG_INPUT_ENABLED}>
+        </p>
+      </form>
+      <br>
+      <form method="post" action="" class="general">
+        <p>
+          {'PH_Restore'|@translate}<br><br>
+            <input class="submit" type="submit" value="{'PH_Restore_File'|@translate}" name="restore" {$TAG_INPUT_ENABLED}>
+        </p>
+      </form>
+      </fieldset>
+
       <br><br>
       <form method="post" name="prune" action="" class="general">
         <ul class="date">
@@ -76,6 +99,7 @@ jQuery().ready(function()
       <a class="date_today" href="#" onClick="document.prune.end_day.value={$smarty.now|date_format:"%d"};document.prune.end_month.value={$smarty.now|date_format:"%m"};document.prune.end_year.value={$smarty.now|date_format:"%Y"};return false;">{'today'|@translate}</a>
           </li>
         </ul>
+
         <p>
           <input class="submit" type="submit" value="{'PH_Prune'|@translate}" name="prune" {$TAG_INPUT_ENABLED}>
         </p>
@@ -131,7 +155,7 @@ jQuery().ready(function()
 jQuery(document).ready(function() {ldelim}
   jQuery('#theAdminPage #the_page').addClass('{$themeconf.name}');
 	jQuery(".infos").fadeOut(800).fadeIn(1200).fadeOut(400).fadeIn(800).fadeOut(400);
-	jQuery(".errors").fadeOut(200).fadeIn(200).fadeOut(300).fadeIn(300).fadeOut(400).fadeIn(400); 
+	jQuery(".errors").fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400); 
 });
 </script>
 {/html_head}

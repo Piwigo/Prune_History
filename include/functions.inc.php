@@ -1,5 +1,32 @@
 <?php
-/* Function called from main.inc.php to get the plugin version and name */
+/**
+ * Plugin administration menu
+ */
+function PH_admin_menu($menu)
+{
+  // Retreive plugin name
+  $plugin =  PHInfos(PH_PATH);
+  $name = $plugin['name'];
+  
+  array_push($menu,
+    array(
+      'NAME' => $name,
+      'URL' => get_root_url().'admin.php?page=plugin-'.basename(PH_PATH)
+    )
+  );
+
+  return $menu;
+}
+
+
+/**
+ * Function to retreive some plugin information like version and name
+ * stored in main.inc.php file
+ * 
+ * @param : Path to plugin
+ * 
+ * @return : Array of retreived information
+ */
 function PHInfos($dir)
 {
   $path = $dir;
@@ -45,11 +72,11 @@ function PHInfos($dir)
 }
 
 
-/* *************************************** */
-/* Update plugin version in conf table     */
-/* Used everytime a new version is updated */
-/* even if no database upgrade is needed   */
-/* *************************************** */
+/**
+ * Function to update plugin version number in config table
+ * Used everytime a new version is updated even if no database
+ * upgrade is needed
+ */
 function PH_version_update()
 {
   global $conf;
@@ -189,11 +216,9 @@ AND summarized = "true";';
 
 
 /**
- * Automatic prune function
+ * Automatic prune function called from 'login_success' trigger
+ * in main.inc.php file
  * 
- * @param : Start and stop range to prune
- * 
- * @return : boolean
  */
 function history_autoprune()
 {
@@ -235,6 +260,172 @@ AND summarized = "true";';
   }
 }
 
+
+/**
+ * PH specific database dump
+ * Creates an SQL dump of history table for safety before manual prune
+ * 
+ * @returns  : Boolean to manage appropriate message display
+ * 
+ */
+function PH_dump($download)
+{
+  global $conf;
+
+  $plugin =  PluginInfos(PH_PATH);
+  $version = $plugin['version'];
+
+  // Initial backup folder creation and file initialisation
+  // ------------------------------------------------------
+  if (!is_dir(PH_PATH.'/include/backup'))
+    mkdir(PH_PATH.'/include/backup');
+
+  $Backup_File = PH_PATH.'/include/backup/PH_Historybackup.sql';
+
+  $fp = fopen($Backup_File, 'w');
+
+  // Writing plugin version
+  $insertions = "-- ".$version." --\n\n";
+  fwrite($fp, $insertions);
+
+  // Saving History table
+  // --------------------
+  $ListTables = array(HISTORY_TABLE);
+  $j=0;
+  
+  while($j < count($ListTables))
+  {
+    $sql = 'SHOW CREATE TABLE '.$ListTables[$j];
+    $res = pwg_query($sql);
+
+    if ($res)
+    {
+      $insertions = "-- -------------------------------------------------------\n";
+      $insertions .= "-- Create ".$ListTables[$j]." table\n";
+      $insertions .= "-- ------------------------------------------------------\n\n";
+
+      $insertions .= "DROP TABLE IF EXISTS ".$ListTables[$j].";\n\n";
+
+      $array = mysql_fetch_array($res);
+      $array[1] .= ";\n\n";
+      $insertions .= $array[1];
+
+      $req_table = pwg_query('SELECT * FROM '.$ListTables[$j]) or die(mysql_error());
+      $nb_fields = mysql_num_fields($req_table);
+      while ($line = mysql_fetch_array($req_table))
+      {
+        $insertions .= 'INSERT INTO '.$ListTables[$j].' VALUES (';
+        for ($i=0; $i<$nb_fields; $i++)
+        {
+          $insertions .= '\'' . pwg_db_real_escape_string($line[$i]) . '\', ';
+        }
+        $insertions = substr($insertions, 0, -2);
+        $insertions .= ");\n";
+      }
+      $insertions .= "\n\n";
+    }
+
+    fwrite($fp, $insertions);    
+    $j++;
+  }
+
+  fclose($fp);
+
+  // Download generated dump file
+  // ----------------------------
+  if ($download == 'true')
+  {
+    if (@filesize($Backup_File))
+    {
+      $http_headers = array(
+        'Content-Length: '.@filesize($Backup_File),
+        'Content-Type: text/x-sql',
+        'Content-Disposition: attachment; filename="PH_Historybackup.sql";',
+        'Content-Transfer-Encoding: binary',
+        );
+
+      foreach ($http_headers as $header)
+      {
+        header($header);
+      }
+
+      @readfile($Backup_File);
+      exit();
+    }
+  }
+
+  return true;
+}
+
+
+/**
+ * PH_Restore_backup_file
+ * Restore backup history table
+ * 
+ * @returns : Boolean
+ */
+function PH_Restore_backup_file() 
+{
+  global $prefixeTable, $dblayer, $conf;
+  
+  define('DEFAULT_PREFIX_TABLE', 'piwigo_');
+  
+  $Backup_File = PH_PATH.'/include/backup/PH_Historybackup.sql';
+
+  // Restore sql backup file - DROP TABLE queries are executed
+  // ---------------------------------------------------------
+  UAM_execute_sqlfile(
+    $Backup_File,
+    DEFAULT_PREFIX_TABLE,
+    $prefixeTable,
+    $dblayer
+  );
+}
+
+
+/**
+ * loads an sql file and executes all queries / Based on Piwigo's original install file
+ *
+ * Before executing a query, $replaced is... replaced by $replacing. This is
+ * useful when the SQL file contains generic words.
+ *
+ * @param string filepath
+ * @param string replaced
+ * @param string replacing
+ * @return void
+ */
+function PH_execute_sqlfile($filepath, $replaced, $replacing, $dblayer)
+{
+  $sql_lines = file($filepath);
+  $query = '';
+  foreach ($sql_lines as $sql_line)
+  {
+    $sql_line = trim($sql_line);
+    if (preg_match('/(^--|^$)/', $sql_line))
+    {
+      continue;
+    }
+    
+    $query.= ' '.$sql_line;
+    
+    // if we reached the end of query, we execute it and reinitialize the
+    // variable "query"
+    if (preg_match('/;$/', $sql_line))
+    {
+      $query = trim($query);
+      $query = str_replace($replaced, $replacing, $query);
+      if ('mysql' == $dblayer)
+      {
+        if (preg_match('/^(CREATE TABLE .*)[\s]*;[\s]*/im', $query, $matches))
+        {
+          $query = $matches[1].' DEFAULT CHARACTER SET utf8'.';';
+        }
+      }
+      pwg_query($query);
+      $query = '';
+    }
+  }
+}
 
 
 /**

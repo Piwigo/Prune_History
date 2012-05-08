@@ -1,0 +1,16 @@
+.date UL, .date LABEL {
+    display: block;
+    float: left;
+    margin-right: 1em;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+.date LI {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0.5em;
+}

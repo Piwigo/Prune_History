@@ -1,0 +1,4 @@
+Plugin Name: Prune History
+** Change log **
+
+1.0.0 - Initial release

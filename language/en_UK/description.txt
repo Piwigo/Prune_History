@@ -1,0 +1,1 @@
+Manual prune and background process which cleans your history table on regular basis.

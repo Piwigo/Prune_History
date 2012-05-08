@@ -1,0 +1,1 @@
+Elaguage manuel et tâche de fond pour nettoyer la table historique.

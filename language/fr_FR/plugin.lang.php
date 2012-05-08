@@ -47,5 +47,5 @@ $lang['range'][2] = 'Mois';
 $lang['range'][3] = 'Année(s)';
 
 $lang['PH_Support'] = 'Le support officiel sur ce plugin se fait exclusivement sur ce fil du forum FR de Piwigo:<br>
-<a href="http://fr.piwigo.org/forum/viewtopic.php?id=" onclick="window.open(this.href);return false;">Forum français - http://fr.piwigo.org/forum/viewtopic.php?id=</a>';
+<a href="http://fr.piwigo.org/forum/viewtopic.php?id=22039" onclick="window.open(this.href);return false;">Forum français - http://fr.piwigo.org/forum/viewtopic.php?id=22039</a>';
 ?>

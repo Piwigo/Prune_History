@@ -1,4 +1,7 @@
 Plugin Name: Prune History
 ** Change log **
 
-1.0.0 - Initial release
+2012-05-08 - 1.0.0 - Initial release
+
+2012-05-16 - 1.0.1 - Add of de_DE translation
+

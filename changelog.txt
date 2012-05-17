@@ -5,3 +5,5 @@ Plugin Name: Prune History
 
 2012-05-16 - 1.0.1 - Add of de_DE translation
 
+2012-05-17 - 1.0.2 - Add it_IT translation (thanks to Gdvpixel)
+

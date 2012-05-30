@@ -272,7 +272,7 @@ function PH_dump($download)
 {
   global $conf;
 
-  $plugin =  PluginInfos(PH_PATH);
+  $plugin =  PHInfos(PH_PATH);
   $version = $plugin['version'];
 
   // Initial backup folder creation and file initialisation

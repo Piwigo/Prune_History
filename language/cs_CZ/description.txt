@@ -1,0 +1,1 @@
+Manuální a automatické pročišťování tabulky historie.

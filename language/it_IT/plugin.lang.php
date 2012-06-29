@@ -45,4 +45,5 @@ $lang['Start_Date'] = 'Data di inizio';
 $lang['range']['1'] = 'Giorni';
 $lang['range']['2'] = 'Mesi';
 $lang['range']['3'] = 'Anni';
+$lang['PH_Support'] = 'Il supporto ufficiale su questo plugin è solo in questa discussione del forum Piwigo:<br><a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">English forum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 ?>

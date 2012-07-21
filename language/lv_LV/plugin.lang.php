@@ -52,4 +52,13 @@ $lang['PH_Save_Title_d'] = 'Tā kā datu apgriešana ir galīga un neatgriezenis
 Tāpat ir iespējams lejupielādēt jūsu rezerves kopijas failu, paturot to ārpus jūsu galerijas. Šajā gadījumā atjaunošanu jāveic izmantojot jūsu datubāzes pārvaldības instrumentu (parasti phpMyAdmin).';
 $lang['PH_Support'] = 'Šī spraudņa oficiālais atbalsts ir pieejams vienīgi šajā Piwigo tēmā:<br>
 <a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Forums angļu valodā - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
+$lang['PH_AutoRange_title_d'] = 'Lūdzu nokonfigurējiet jūsu Vēstures <b>konservācijas</b> kritērijus priekš automātiskās apgriešanas.Ir pieejamas vairākas iespējas:<br><br>
+- Paturēt x dienas<br>
+- Paturēt x mēnešus<br>
+- Paturēt x gadus<br><br>
+Piemēram: Ja vēlaties paturēt vēsturisko griezumu 3 mēnešu garumā, varat iestatīt trīs mēnešus vai 91 dienu.<br><br>
+Piezīme: Automātiskā apgriešana neietekmē vēstures kopsavilkumu. ';
+$lang['PH_ManualPrune_title_d'] = 'Šī funkcija ļauj izdzēst vēstures ierakstus, pamatojoties uz dažādiem datumiem. Izvēlieties apstrādes sākuma un beigu datumu un sākat procesu.<br><br>
+<b style=&quot;color: red;&quot;>Uzmanību: Vēstures dati tiks neatgriezeniski izdzēsti!</b> Jūs varat izveidot rezerves kopiju un atjaunot vēsture datu sarakstu, izmantojot funkcijas pareizajā rāmī.<br><br>
+Piezīme: Automātiskā apgriešana neietekmē vēstures kopsavilkumu.';
 ?>

@@ -44,4 +44,12 @@ $lang['Start_Date'] = 'Sākuma datums';
 $lang['range']['1'] = 'Diena(s)';
 $lang['range']['2'] = 'Mēnesis(ši)';
 $lang['range']['3'] = 'Gads(i)';
+$lang['PH_AutoPrune_title_d'] = 'Ja ir iespējota automātiskā apgriešana, tā nostrādās automātiski pie katras lietotāja ielogošanās galerijā (ieskaitot administratoru vai webmasteru) un tās darbība pamatosies uz saglabāšanas iestatījumiem.
+<br><br>
+<b style=&quot;color: red;&quot;>Lietot ar piesardzību! Apgrieztos datus nevarēs atjaunot!</b>';
+$lang['PH_Restore'] = 'Vēstures saraksta rezerves kopijas atjaunošanai.<br>Tikai uz servera saglabātais fails tiks ņemts vērā.';
+$lang['PH_Save_Title_d'] = 'Tā kā datu apgriešana ir galīga un neatgriezeniska, ieteicams, pirms sākt apgriešanu, saglabāt jūsu vēstures saraksta kopiju. Pēc noklusēšanas saraksts tiek saglabāts failā uz servera un to var atjaunot no turienes.<br><br>
+Tāpat ir iespējams lejupielādēt jūsu rezerves kopijas failu, paturot to ārpus jūsu galerijas. Šajā gadījumā atjaunošanu jāveic izmantojot jūsu datubāzes pārvaldības instrumentu (parasti phpMyAdmin).';
+$lang['PH_Support'] = 'Šī spraudņa oficiālais atbalsts ir pieejams vienīgi šajā Piwigo tēmā:<br>
+<a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Forums angļu valodā - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 ?>

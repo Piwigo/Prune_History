@@ -46,4 +46,6 @@ $lang['range']['1'] = 'Giorni';
 $lang['range']['2'] = 'Mesi';
 $lang['range']['3'] = 'Anni';
 $lang['PH_Support'] = 'Il supporto ufficiale su questo plugin è solo in questa discussione del forum Piwigo:<br><a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">English forum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
+$lang['PH_AutoPrune_title_d'] = 'Se si attiva eliminazione automatica, verrà attivato automaticamente in base al criterio della conservazione ad ogni login utente alla galleria (compresi amministratore o webmaster).<br><br>
+<b style=&quot;color: red;&quot;>Usare con cautela! Dati eliminati non sono recuperabili in caso di errore</b>';
 ?>

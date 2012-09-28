@@ -1,0 +1,1 @@
+Manuel og automatisk oprydning i historiktabellen.

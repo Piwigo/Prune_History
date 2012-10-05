@@ -16,3 +16,10 @@ Plugin Name: Prune History
                    - Update pl_PL, thanks to : T00kie
                    - Update lv_LV, thanks to : agrisans
                    - Update uk_UA, thanks to : animan
+
+2012-10-05 - 1.0.6 - Update uk_UA, thanks to : animan
+                   - Update it_IT, thanks to : Ericnet, virgigiole
+                   - Add ru_RU, thanks to : nadusha, rocket
+                   - Add sk_SK, thanks to : dodo
+                   - Add da_DK, thanks to : Kaare
+                   - Add es_ES, thanks to : jpr928

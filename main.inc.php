@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Prune History
-Version: 1.0.5
+Version: auto
 Description: Based on original History_cleanup plugin from VDigital, this plugin allows to manually or automatically prune history table according to configurable criteria
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=604
 Author: Eric

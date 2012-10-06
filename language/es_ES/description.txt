@@ -1,0 +1,1 @@
+Poda manual y automática de la tabla de historial.

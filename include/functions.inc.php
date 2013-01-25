@@ -244,7 +244,6 @@ function history_autoprune()
       $limit = mktime(0, 0, 0, date("m") , date("d"), date("Y")-$conf_PH[2]);
       $limit = date('Y-m-d', $limit);
     }
-  }
 
   $query = '
 DELETE FROM '.HISTORY_TABLE.' 
@@ -257,6 +256,7 @@ AND summarized = "true";';
 	{
     $query = 'OPTIMIZE TABLE '.HISTORY_TABLE.';';
     pwg_query($query);
+  }
   }
 }
 

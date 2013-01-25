@@ -25,3 +25,5 @@ Plugin Name: Prune History
                    - Add es_ES, thanks to : jpr928
 
 2012-10-05 - 1.0.7 - Update es_ES, thanks to : jpr928
+
+2012-10-05 - 1.0.8 - Bug fixed : Possible MySql error when using "0" value in auto-prune function.

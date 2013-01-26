@@ -37,4 +37,6 @@ $lang['PH_No_Backup_File'] = 'A visszaállításhoz nem található biztonsági 
 $lang['PH_Restoration_NOK'] = 'Helyreállítás sikertelen!';
 $lang['PH_Restoration_OK'] = 'Helyreállítás sikeres!';
 $lang['PH_Restore_File'] = 'Előzmények visszaállítása';
+$lang['PH_Support'] = 'A bővítmény hivatalos támogatása a következő fórum témában:<br>
+<a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Angol fórum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 ?>

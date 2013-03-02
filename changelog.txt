@@ -31,3 +31,5 @@ Plugin Name: Prune History
 2013-02-28 - 1.1.0 - Compliance with Piwigo 2.5
                    - Code refactory : Change config variables to assoc array and $_POST vars control before writing conf in database - Thx to flop25 for his advices ;-)
                    - Bug fixed : Unable to restore a backup file
+                   - Add hu_HU, thanks to : samli
+                   

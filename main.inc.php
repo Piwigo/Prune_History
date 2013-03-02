@@ -30,7 +30,7 @@ add_event_handler('get_admin_plugin_menu_links', 'PH_admin_menu');
 
 
 /* Prune automation on user login */
-if (isset($conf_PH[1]) and $conf_PH[1] == 'true')
+if (isset($conf_PH['AUTOPRUNE']) and $conf_PH['AUTOPRUNE'] == 'true')
 {
   add_event_handler('login_success', 'history_autoprune' );
 }

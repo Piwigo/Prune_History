@@ -34,10 +34,10 @@ $name = $plugin['name'];
 if (isset($_POST['submit']) and isset($_POST['PH_AutoPrune']) and isset($_POST['PH_Range_Value']) and isset($_POST['PH_Range']))
 {
 
-  $newconf_PH[0] = $version;
-  $newconf_PH[1] = $_POST['PH_AutoPrune'];
-  $newconf_PH[2] = $_POST['PH_Range_Value'];
-  $newconf_PH[3] = $_POST['PH_Range'];
+  $newconf_PH['PHVersion'] = $version;
+  $newconf_PH['AUTOPRUNE'] = (isset($_POST['PH_AutoPrune']) ? $_POST['PH_AutoPrune'] : 'false');
+  $newconf_PH['RANGEVALUE'] = (isset($_POST['PH_Range_Value']) ? $_POST['PH_Range_Value'] : '0');
+  $newconf_PH['RANGE'] = (isset($_POST['PH_Range']) ? $_POST['PH_Range'] : '0');
 
   $conf['PruneHistory'] = serialize($newconf_PH);
 
@@ -161,10 +161,10 @@ $template->assign(
     'PH_NAME'                    => $name,
     'PH_VERSION'                 => $version,
     'PH_DUMP_DOWNLOAD'           => $dump_download,
-		'PH_AUTOPRUNE_TRUE'          => $conf_PH[1]=='true' ? 'checked="checked"' : '' ,
-		'PH_AUTOPRUNE_FALSE'         => $conf_PH[1]=='false' ? 'checked="checked"' : '' ,
-    'PH_RANGE_VALUE'             => $conf_PH[2],
-    'PH_RANGE_SELECTED'          => $conf_PH[3],
+		'PH_AUTOPRUNE_TRUE'          => $conf_PH['AUTOPRUNE']=='true' ? 'checked="checked"' : '' ,
+		'PH_AUTOPRUNE_FALSE'         => $conf_PH['AUTOPRUNE']=='false' ? 'checked="checked"' : '' ,
+    'PH_RANGE_VALUE'             => $conf_PH['RANGEVALUE'],
+    'PH_RANGE_SELECTED'          => $conf_PH['RANGE'],
     'range_list'                 => $range_list,
     'month_list'                 => $month_list,
     'START_DAY_SELECTED'         => @$_POST['start_day'],

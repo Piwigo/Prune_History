@@ -23,11 +23,12 @@ function plugin_install()
 
   // Default global parameters for Prune History conf
   // -------------------------------------------------
-  $defaultPH[0] = $version;                                  // Prune History version
-  $defaultPH[1] = 'false';                                   // Enable automated prune
-  $defaultPH[2] = '0';                                       // Range
-  $defaultPH[3] = '0';                                       // Value (Year, month, day)
-
+  $defaultPH = array(
+    'PHVersion'   => $version, // Prune History version
+    'AUTOPRUNE'   => 'false', // Enable automated prune
+    'RANGEVALUE'  => '0', // Range
+    'RANGE'       => '0' // Value (Year, month, day)
+  );
   // Create Prune History conf if not already exists
   // ------------------------------------------------
 	$query = '
@@ -55,6 +56,22 @@ function plugin_activate()
 /* Cleaning obsolete files */
 /* *********************** */
   PH_Obsolete_Files();
+
+  include_once (PH_PATH.'include/upgradedb.inc.php');
+
+/* Check database upgrade */
+/* ********************** */
+  $conf_PH = unserialize($conf['PruneHistory']);
+
+  if (isset($conf_PH[0]))
+  {
+    if (version_compare($conf_PH['PHVersion'], '1.1.0') < 0)
+    {
+    /* upgrade from 1.0 to 1.1 */
+    /* *********************** */
+      upgrade_100_110();
+    }
+  }
 
 /* Update plugin version number in #_config table */
 /* and check consistency of #_plugins table       */

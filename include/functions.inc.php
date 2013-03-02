@@ -98,10 +98,10 @@ WHERE param = "PruneHistory"
 
   $result = pwg_query($query);
   $conf_PH = pwg_db_fetch_assoc($result);
-    
+
   $Newconf_PH = unserialize($conf_PH['value']);
-  
-  $Newconf_PH[0] = $version;
+
+  $Newconf_PH['PHVersion'] = $version;
 
   $update_conf = serialize($Newconf_PH);
 
@@ -227,21 +227,21 @@ function history_autoprune()
   $conf_PH = unserialize($conf['PruneHistory']);
 
   // Definition of the range to keep
-  if (isset($conf_PH[1]) and $conf_PH[1] == 'true' and isset($conf_PH[2]) and $conf_PH[2] <> '0' and isset($conf_PH[3]) and $conf_PH[3] <> '0')
+  if (isset($conf_PH['AUTOPRUNE']) and $conf_PH['AUTOPRUNE'] == 'true' and isset($conf_PH['RANGEVALUE']) and $conf_PH['RANGEVALUE'] <> '0' and isset($conf_PH['RANGE']) and $conf_PH['RANGE'] <> '0')
   {
-    if ($conf_PH[3] == '1') // Ranged for days
+    if ($conf_PH['RANGE'] == '1') // Ranged for days
     {
-      $limit = mktime(0, 0, 0, date("m") , date("d")-$conf_PH[2], date("Y"));
+      $limit = mktime(0, 0, 0, date("m") , date("d")-$conf_PH['RANGEVALUE'], date("Y"));
       $limit = date('Y-m-d', $limit);
     }
-    else if ($conf_PH[3] == '2') // Ranged for months
+    else if ($conf_PH['RANGE'] == '2') // Ranged for months
     {
-      $limit = mktime(0, 0, 0, date("m")-$conf_PH[2] , date("d"), date("Y"));
+      $limit = mktime(0, 0, 0, date("m")-$conf_PH['RANGEVALUE'] , date("d"), date("Y"));
       $limit = date('Y-m-d', $limit);
     }
-    else if  ($conf_PH[3] == '3') // Ranged for years
+    else if  ($conf_PH['RANGE'] == '3') // Ranged for years
     {
-      $limit = mktime(0, 0, 0, date("m") , date("d"), date("Y")-$conf_PH[2]);
+      $limit = mktime(0, 0, 0, date("m") , date("d"), date("Y")-$conf_PH['RANGEVALUE']);
       $limit = date('Y-m-d', $limit);
     }
 
@@ -306,13 +306,15 @@ function PH_dump($download)
 
       $insertions .= "DROP TABLE IF EXISTS ".$ListTables[$j].";\n\n";
 
-      $array = mysql_fetch_array($res);
+      $array = pwg_db_fetch_row($res);
       $array[1] .= ";\n\n";
       $insertions .= $array[1];
 
-      $req_table = pwg_query('SELECT * FROM '.$ListTables[$j]) or die(mysql_error());
-      $nb_fields = mysql_num_fields($req_table);
-      while ($line = mysql_fetch_array($req_table))
+      $req_table = pwg_query('DESCRIBE '.$ListTables[$j].';') or die(my_error());
+      $nb_fields = pwg_db_num_rows($req_table);
+      $req_table2 = pwg_query('SELECT * FROM '.$ListTables[$j]) or die(my_error());
+
+      while ($line = pwg_db_fetch_row($req_table2))
       {
         $insertions .= 'INSERT INTO '.$ListTables[$j].' VALUES (';
         for ($i=0; $i<$nb_fields; $i++)
@@ -374,7 +376,7 @@ function PH_Restore_backup_file()
 
   // Restore sql backup file - DROP TABLE queries are executed
   // ---------------------------------------------------------
-  UAM_execute_sqlfile(
+  PH_execute_sqlfile(
     $Backup_File,
     DEFAULT_PREFIX_TABLE,
     $prefixeTable,

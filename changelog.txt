@@ -28,8 +28,9 @@ Plugin Name: Prune History
 
 2012-10-05 - 1.0.8 - Bug fixed : Possible MySql error when using "0" value in auto-prune function.
 
-2013-02-28 - 1.1.0 - Compliance with Piwigo 2.5
+2013-03-02 - 1.1.0 - Compliance with Piwigo 2.5
                    - Code refactory : Change config variables to assoc array and $_POST vars control before writing conf in database - Thx to flop25 for his advices ;-)
                    - Bug fixed : Unable to restore a backup file
                    - Add hu_HU, thanks to : samli
                    
+2013-03-03 - 1.1.1 - Update hu_HU, thanks to : samli

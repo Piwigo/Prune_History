@@ -39,4 +39,25 @@ $lang['PH_Restoration_OK'] = 'Helyreállítás sikeres!';
 $lang['PH_Restore_File'] = 'Előzmények visszaállítása';
 $lang['PH_Support'] = 'A bővítmény hivatalos támogatása a következő fórum témában:<br>
 <a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Angol fórum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
+$lang['PH_ManualPrune_title_d'] = 'Ez a funkció lehetővé teszi egy sor dátumhoz tartozó előzmény törlését. A mentés elkezdése előtt állítsa be a mentendő időtartomány kezdő és befejező időpontját.<br><br>
+<b style=&quot;color: red;&quot;>Figyelmeztetés: Az előzmények adatai visszavonhatatlanul törlésre kerülnek!</b> Az előzmények tábla mentése és visszaállítása a jobb oldali keretben található funkciókkal hajtható végre.<br><br>
+Megjegyzés: Az előzmény összefoglaló nem érinti az automatikus metszést.';
+$lang['PH_AutoPrune_title_d'] = 'Amennyiben engedélyezi az automatikus mentést, az végrehajtásra kerül minden bejelentkezés után (administrator vagy webmester) a megőrzés beállításai szerint.<br><br>
+<b style=&quot;color: red;&quot;>Körültekintően használja! Az adatok metszése után az adatok nem nyerhetők vissza!</b>';
+$lang['PH_Save_Title_d'] = 'Mivel a metszés végleges és visszafordíthatatlan, javasolt az előzmények tábla biztonsági mentésének végrehajtása a metszés megkezdése előtt. Alapértelmezésben a szerverre történik a fájl mentése és onnan vissza is állítható.<br><br>
+Alternatív megoldás a fájl letöltése és megőrzése. Ebben az esetben a visszaállítás egy adatbázis kezelő (általában phpMyAdmin) segítségével valósítható meg.';
+$lang['PH_AutoRange_title'] = 'Előzmények megőrzésének beállítása:';
+$lang['PH_Restore'] = 'Előzmények tábla biztonsági másolatának visszaállítása.<br>Csak a szerverre mentett fájl vehető figyelembe.';
+$lang['PH_Save'] = 'Előzmények mentése';
+$lang['PH_AutoPrune_title'] = 'Automatikus metszés';
+$lang['PH_AutoRange_title_d'] = 'Kérjük, állítsa be az előzmények <b>megőrzéséhez</b> kapcsolódó automatikus metszés feltételeit. Több választás lehetséges:<br><br>
+- Megtart x nap<br>
+- Megtart x hónap<br>
+- Megtart x év<br><br>
+Például: Amennyiben az előző 3 hónap eseményeit kívánja megtartani, akkor vagy 3 hónapot, vagy 91 napot kell megadnia.<br><br>
+Megjegyzés: Az előzmény összefoglaló nem érinti az automatikus metszést.';
+$lang['PH_ManualPrune_title'] = 'Kézi metszés';
+$lang['PH_Prune'] = 'Kézi metszés indítása';
+$lang['PH_Prune_Done'] = 'Kézi metszés kész!';
+$lang['PH_Prune_Error'] = 'Hiba a kézi metszés során! Ellenőrizze az időtartományt.';
 ?>

@@ -43,21 +43,21 @@ $lang['PH_Prune_Error'] = 'Erro no expurgo manual! Verifique o intervalo das dat
 $lang['PH_Restoration_NOK'] = 'Restauração falhou!';
 $lang['PH_Restoration_OK'] = 'Restaurado com sucesso!';
 $lang['PH_Restore_File'] = 'Restaurar histórico';
-$lang['PH_Save_Title_d'] = 'Porque o expurgo é final e irreversível, é aconselhável salvar sua tabela história antes de começar o expurgo. Por padrão, a tabela é salva em um arquivo no servidor e pode ser restaurado a partir de lá.<br><br>
+$lang['PH_Save_Title_d'] = 'Porque o expurgo é final e irreversível, é aconselhável salvar a tabela com o histórico antes de começar o expurgo. O padrão é salvar   a tabela em um arquivo no servidor podendo ser restaurada a partir de lá.<br><br>
 Mas também é possível fazer o download do arquivo de backup para mantê-lo fora de sua galeria. Neste caso, a restauração deve ser feita através da sua ferramenta de gestão de base de dados (geralmente phpMyAdmin).';
-$lang['PH_Support'] = 'O suporte oficial sobre este plugin é apenas sobre estes tópico do fórum Piwigo:<br>
+$lang['PH_Support'] = 'O suporte oficial deste plugin é apenas neste tópico do fórum Piwigo:<br>
 <a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">English forum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 $lang['PH_Restore'] = 'Para restaurar um backup de sua tabela história.<br>Apenas os arquivos salvos no servidor é levados em conta.';
-$lang['PH_Bad_version_backup'] = 'Versão do plugin errado! O backup que você está tentando restaurar está desatualizada ou foi criado com uma versão mais antiga do plugin.';
+$lang['PH_Bad_version_backup'] = 'Versão do plugin errado! O backup que você está tentando restaurar está desatualizado ou foi criado com uma versão mais antiga do plugin.';
 $lang['PH_ManualPrune_title_d'] = 'Este recurso permite que você exclua as entradas do histórico baseado em um intervalo de datas. Escolha uma data de início e data final do tratamento e execute.<br><br>
 <b style=&quot;color: red;&quot;>Os dados do histórico serão irremediavelmente apagados!</b> 
 Você pode fazer backup e restaurar a tabela de histórico usando as funções do quadro à direita.<br><br>
 Nota: O resumo da história não é afetado pela poda.';
 $lang['PH_AutoPrune_title_d'] = 'Se você ativar a poda automática, ele será acionado automaticamente a cada login do usuário na galeria (incluindo um administrador ou webmaster) e com base nas configurações de conservação.<br><br><b style=&quot;color: red;&quot;>Use com cuidado! Dados podados não serão recuperáveis!</b>';
-$lang['PH_AutoRange_title_d'] = 'Por favor configurar seu Histórico<b>conservação</b>critério para a poda automática. Várias opções são possíveis:<br><br>
--Mantenha x dias<br>
--Mantenha x meses<br>
--Mantenha x anos<br>
-Por exemplo: Se você quer manter uma profundidade histórica de 3 meses, você pode definir até três meses ou 91 dias.<br><br>
-Nota: O resumo da história não é afetado pela poda automática.';
+$lang['PH_AutoRange_title_d'] = 'Por favor configurar o critério de <b>conservação</b> do seu histórico para o expurgo automático. Várias opções são possíveis:<br><br>
+-Manter x dias<br>
+-Manter x meses<br>
+-Manter x anos<br>
+Por exemplo: Se você quer manter um histórico de 3 meses, você pode definir até três meses ou 91 dias.<br><br>
+Nota: O resumo do histórico não é afetado pelo expurgo automático.';
 ?>

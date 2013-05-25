@@ -38,4 +38,5 @@ Plugin Name: Prune History
 2013-05-01 - 1.1.2 - Update hu_HU, thanks to : samli
                      Add pt_BR, thanks to : hespanhol
                      Update pt_BR, thanks to : flaviove and hespanhol
-                     
+
+2013-05-25 - 1.1.3 - Add pt_PT, thanks to : ANO

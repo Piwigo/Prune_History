@@ -45,3 +45,5 @@ Plugin Name: Prune History
 
 2013-12-22 - 2.6.0 - Compatibility checked with Piwigo 2.6
                      Add nl_NL, thanks to : Kees Hessels
+
+2014-03-02 - 2.6.1 - Add zh_CN, thanks to : dennisyan

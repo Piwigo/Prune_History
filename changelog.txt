@@ -47,3 +47,5 @@ Plugin Name: Prune History
                      Add nl_NL, thanks to : Kees Hessels
 
 2014-03-02 - 2.6.1 - Add zh_CN, thanks to : dennisyan
+
+2014-08-31 - 2.7.0 - Compatibility with Piwigo 2.7

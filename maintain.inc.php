@@ -7,7 +7,7 @@ if(!defined('PH_PATH'))
 
 include_once (PH_PATH.'include/functions.inc.php');
 
-function plugin_install()
+function plugin_install($id, $version, &$errors)
 {
 	global $conf;
 
@@ -49,7 +49,7 @@ VALUES ("PruneHistory","'.pwg_db_real_escape_string(serialize($defaultPH)).'","P
 }
 
 
-function plugin_activate()
+function plugin_activate($id, $version, &$errors)
 {
   global $conf;
 

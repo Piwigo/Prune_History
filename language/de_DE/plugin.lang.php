@@ -21,38 +21,42 @@
 // | USA.                                                                  |
 // +-----------------------------------------------------------------------+
 $lang['PH_AutoPrune_false'] = 'Deaktivieren (Standard)';
-$lang['PH_AutoPrune_title_d'] = 'Wenn Sie die automatische Bereinigung zu ermöglichen, wird es automatisch bei jedem User-Login auf der Galerie (einschließlich eines Administrators oder Webmasters) ausgelöst werden und basierend auf den Naturschutz-Einstellungen.<br><br>
-<b style=&quot;color: red;&quot;>Mit Vorsicht! Zurückgeschnitten Daten nicht wiederhergestellt werden!</b>';
-$lang['PH_AutoPrune_title'] = 'Automatische Beschneidung';
+$lang['PH_AutoPrune_title_d'] = 'Wenn Sie die automatische Bereinigung aktivieren, wird diese automatisch bei jeder Benutzeranmeldung (einschließlich Administratoren- oder Webmaster) angestossen, basierend auf den Sicherungseinstellungen.<br><br>
+<b style=&quot;color: red;&quot;>Mit Vorsicht verwenden! Limitierte Daten können nicht wiederhergestellt werden!</b>';
+$lang['PH_AutoPrune_title'] = 'Automatische Bereinigung';
 $lang['PH_AutoPrune_true'] = 'Aktivieren';
-$lang['PH_AutoRange_title_d'] = 'Bitte konfigurieren Sie Ihre History <b>Erhaltung</b> Kriterium für die automatische Bereinigung. Mehrere Optionen sind möglich:<br><br>
-- Halten Sie x Tage<br>
-- Halten Sie x Monate<br>
-- Halten Sie x Jahren<br><br>
-Zum Beispiel: Wenn Sie eine historische Tiefe von 3 Monaten behalten möchten, können Sie bis drei Monate oder 91 Tage.<br><br>
+$lang['PH_AutoRange_title_d'] = 'Bitte konfigurieren Sie Ihre History-<b>Sicherungskriterien</b> für die automatische Bereinigung. Mehrere Optionen sind möglich:<br><br>
+- x Tage behalten<br>
+- x Monate behalten<br>
+- x Jahre behalten<br><br>
+Beispiel: Wenn Sie History-Daten bis 3 Monate behalten möchten, können Sie drei Monate oder 91 Tage konfigurieren.<br><br>
+Hinweis: Die History-Zusammenfassung ist nicht durch automatische Begrenzung tangiert.';
 Hinweis: Die History Zusammenfassung wird nicht durch automatische Beschneiden betroffen.';
-$lang['PH_AutoRange_title'] = 'Halten die History bis zu:';
-$lang['PH_Bad_version_backup'] = 'Falsche Plugin-Version! Das Backup Sie wiederherstellen möchten ist veraltet oder mit einer älteren Version des Plugins erstellt worden.';
-$lang['PH_Dump_Download'] = 'Um die Wiederherstellung-Datei herunterzuladen, aktivieren Sie dieses Feld:';
+$lang['PH_AutoRange_title'] = 'History behalten bis:';
+$lang['PH_Bad_version_backup'] = 'Falsche Plugin-Version! Das Backup, das Sie wiederherstellen möchten, ist veraltet oder mit einer älteren Version des Plugins erstellt worden.';
+$lang['PH_Dump_Download'] = 'Um die Wiederherstellung-Datei herunterzuladen, wählen Sie dieses Kontrollkästchen:';
 $lang['PH_Dump_NOK'] = 'Das Backup ist fehlgeschlagen!';
 $lang['PH_Dump_OK'] = 'Das Backup war erfolgreich!';
-$lang['PH_ManualPrune_title_d'] = 'Diese Funktion ermöglicht es Ihnen, History-Einträge auf der Grundlage einer Reihe von Daten zu löschen. Wählen Sie ein Startdatum und Enddatum der Behandlung und Lauf.<br><br>
+$lang['PH_ManualPrune_title_d'] = 'Diese Funktion ermöglicht es Ihnen, History-Einträge auf der Grundlage einer Reihe von Daten zu löschen. Wählen Sie ein Start- und Enddatum der Bereinigung und Ausführung.<br><br>
+<b style=&quot;color: red;&quot;>Warnung: Die History-Daten werden unwiederbringlich gelöscht!</b> Sie können die History-Daten über die Funktionen im rechten Bereich sichern und wiederherstellen <br><br>
+Hinweis: Die History-Zusammenfassung ist nicht von der Bereinigung betroffen.';
 <b style=&quot;color: red;&quot;>Warnung: Die History Daten werden unwiederbringlich gelöscht!</b> Sie können Backup und Restore History-Tabelle, indem Sie die Funktionen im rechten Frame.<br><br>
 Hinweis: Die History Zusammenfassung wird nicht durch Beschneidung betroffen.';
-$lang['PH_ManualPrune_title'] = 'Manuelle Beschneidung';
-$lang['PH_No_Backup_File'] = 'Kein Backup-Datei zum Wiederherstellen gefunden!';
-$lang['PH_Prune_Done'] = 'Manuelle Bereinigung getan!';
-$lang['PH_Prune_Error'] = 'Fehler manuellen Bereinigung! Überprüfen Sie Ihre Datumsbereich.';
-$lang['PH_Prune'] = 'Führen Sie manuellen Bereinigung';
+$lang['PH_ManualPrune_title'] = 'Manuelle Begrenzung';
+$lang['PH_No_Backup_File'] = 'Keine Backup-Datei zum Wiederherstellen gefunden!';
+$lang['PH_Prune_Done'] = 'Manuelle Bereinigung ausgeführt!';
+$lang['PH_Prune_Error'] = 'Fehler bei der manuellen Bereinigung! Überprüfen Sie den Datumsbereich.';
+$lang['PH_Prune'] = 'Manuelle Bereinigung ausführen';
 $lang['PH_Restoration_NOK'] = 'Wiederherstellung fehlgeschlagen!';
 $lang['PH_Restoration_OK'] = 'Wiederherstellung erfolgreich!';
-$lang['PH_Restore_File'] = 'Wiederherstellen History';
-$lang['PH_Restore'] = 'Um ein Backup Ihrer History-Tabelle wiederherstellen.<br>Lediglich die gespeicherte Datei auf dem Server berücksichtigt wird.';
-$lang['PH_Save_Title_d'] = 'Denn Beschneidung ist endgültig und unumkehrbar, ist es ratsam, Ihre History-Tabelle vor Beginn der Beschneidung zu retten. Standardmäßig wird die Tabelle in einer Datei auf dem Server gespeichert und können von dort wiederhergestellt werden.<br><br>
-Aber es ist auch möglich, die Wiederherstellung-Datei herunterladen, um es aus Ihrer Galerie. In diesem Fall muss die Restauration über Ihre Datenbank-Management-Tool (in der Regel phpMyAdmin) durchgeführt werden.';
+$lang['PH_Restore_File'] = 'History wiederherstellen';
+$lang['PH_Restore'] = 'Ein Backup Ihrer History-Tabelle wiederherstellen.<br>Lediglich die gespeicherte Datei auf dem Server wird berücksichtigt.';
+$lang['PH_Save_Title_d'] = 'Da eine Bereinigung endgültig und unwiderrufbar ist, wird empfohlen, Ihre History-Tabelle vor Beginn der Bereinigung zu sichern. Standardmäßig werden die Tabelle in einer Datei auf dem Server gespeichert und kann von dort wiederhergestellt werden.<br><br>
+Es ist zudem möglich, die Wiederherstellung-Datei herunterladen, um sie extern zu speichern. In diesem Fall muss die Wiederherstellung über Ihr Datenbank-Management-Tool (in der Regel phpMyAdmin) durchgeführt werden.';
 $lang['PH_Save_Title'] = 'Sicherheits-Backup';
-$lang['PH_Save'] = 'Backup History';
-$lang['PH_Support'] = 'Die offizielle Unterstützung auf diesem Plugin ist nur auf diesen Piwigo Forenbeitrag:<br>
+$lang['PH_Save'] = 'Backup-History';
+$lang['PH_Support'] = 'Die offizielle Unterstützung dieses Plugins wird nur auf diesen Piwigo Forenbeitrag geboten:<br>
+<a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Englisch-Forum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 <a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Englisch-Forum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 $lang['PH_save_config'] = 'Einstellungen gespeichert!';
 $lang['PH_submit'] = 'Einstellungen speichern';
@@ -60,4 +64,3 @@ $lang['Start_Date'] = 'Startdatum';
 $lang['range']['1'] = 'Tag(e)';
 $lang['range']['2'] = 'Monat(e)';
 $lang['range']['3'] = 'Jahr(e)';
-?>

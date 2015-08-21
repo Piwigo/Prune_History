@@ -31,7 +31,7 @@ $lang['PH_AutoRange_title_d'] = 'Bitte konfigurieren Sie Ihre History-<b>Sicheru
 - x Jahre behalten<br><br>
 Beispiel: Wenn Sie History-Daten bis 3 Monate behalten möchten, können Sie drei Monate oder 91 Tage konfigurieren.<br><br>
 Hinweis: Die History-Zusammenfassung ist nicht durch automatische Begrenzung tangiert.';
-Hinweis: Die History Zusammenfassung wird nicht durch automatische Beschneiden betroffen.';
+
 $lang['PH_AutoRange_title'] = 'History behalten bis:';
 $lang['PH_Bad_version_backup'] = 'Falsche Plugin-Version! Das Backup, das Sie wiederherstellen möchten, ist veraltet oder mit einer älteren Version des Plugins erstellt worden.';
 $lang['PH_Dump_Download'] = 'Um die Wiederherstellung-Datei herunterzuladen, wählen Sie dieses Kontrollkästchen:';
@@ -40,8 +40,6 @@ $lang['PH_Dump_OK'] = 'Das Backup war erfolgreich!';
 $lang['PH_ManualPrune_title_d'] = 'Diese Funktion ermöglicht es Ihnen, History-Einträge auf der Grundlage einer Reihe von Daten zu löschen. Wählen Sie ein Start- und Enddatum der Bereinigung und Ausführung.<br><br>
 <b style=&quot;color: red;&quot;>Warnung: Die History-Daten werden unwiederbringlich gelöscht!</b> Sie können die History-Daten über die Funktionen im rechten Bereich sichern und wiederherstellen <br><br>
 Hinweis: Die History-Zusammenfassung ist nicht von der Bereinigung betroffen.';
-<b style=&quot;color: red;&quot;>Warnung: Die History Daten werden unwiederbringlich gelöscht!</b> Sie können Backup und Restore History-Tabelle, indem Sie die Funktionen im rechten Frame.<br><br>
-Hinweis: Die History Zusammenfassung wird nicht durch Beschneidung betroffen.';
 $lang['PH_ManualPrune_title'] = 'Manuelle Begrenzung';
 $lang['PH_No_Backup_File'] = 'Keine Backup-Datei zum Wiederherstellen gefunden!';
 $lang['PH_Prune_Done'] = 'Manuelle Bereinigung ausgeführt!';
@@ -56,7 +54,6 @@ Es ist zudem möglich, die Wiederherstellung-Datei herunterladen, um sie extern 
 $lang['PH_Save_Title'] = 'Sicherheits-Backup';
 $lang['PH_Save'] = 'Backup-History';
 $lang['PH_Support'] = 'Die offizielle Unterstützung dieses Plugins wird nur auf diesen Piwigo Forenbeitrag geboten:<br>
-<a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Englisch-Forum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 <a href="http://piwigo.org/forum/viewtopic.php?id=19418" onclick="window.open(this.href);return false;">Englisch-Forum - http://piwigo.org/forum/viewtopic.php?id=19418</a>';
 $lang['PH_save_config'] = 'Einstellungen gespeichert!';
 $lang['PH_submit'] = 'Einstellungen speichern';

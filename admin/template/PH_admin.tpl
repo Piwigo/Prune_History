@@ -3,7 +3,7 @@
 
 {combine_css path= $PH_PATH|@cat:'admin/template/ph.css'}
 
-{include file='include/datepicker.inc.tpl'}
+{include file='themes/default/template/include/datepicker.inc.tpl'}
 
 {footer_script}{literal}
   pwg_initialization_datepicker("#start_day", "#start_month", "#start_year", "#start_linked_date", null, null, "#end_linked_date");

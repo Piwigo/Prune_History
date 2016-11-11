@@ -54,3 +54,5 @@ Plugin Name: Prune History
 
 2015-10-02 - 2.7.2 - Datepicker not correctly set and causes plugin malfunction
 					 Update de_DE translation, Thanks to bigant
+
+2016-11-11 - 2.7.3 - Fix datepicker.inc.tpl error

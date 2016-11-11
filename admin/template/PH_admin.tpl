@@ -22,7 +22,6 @@ function pwg_initialization_datepicker(day, month, year, linked_date, checked_on
 }
 {/footer_script}
 
-
 {footer_script}{literal}
   pwg_initialization_datepicker("#start_day", "#start_month", "#start_year", "#start_linked_date", null, null, "#end_linked_date");
   pwg_initialization_datepicker("#end_day", "#end_month", "#end_year", "#end_linked_date", null, "#start_linked_date", null);

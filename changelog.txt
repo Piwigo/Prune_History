@@ -1,4 +1,4 @@
-Plugin Name: Prune History
+﻿Plugin Name: Prune History
 ** Change log **
 
 2012-05-08 - 1.0.0 - Initial release
@@ -56,3 +56,5 @@ Plugin Name: Prune History
 					 Update de_DE translation, Thanks to bigant
 
 2016-11-11 - 2.7.3 - Fix datepicker.inc.tpl error
+
+2018-03-16 - 2.7.4 - Removed "summarized" column (no longer used since Piwigo 2.9) from SQL requests

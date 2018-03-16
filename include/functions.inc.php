@@ -182,8 +182,7 @@ function history_prune($startdate,$stopdate)
 DELETE
 FROM '.HISTORY_TABLE.' 
 WHERE date < "'.$stopdate.'" 
-AND date > "'.$startdate.'"
-AND summarized = "true";';
+AND date > "'.$startdate.';';
 
     $r = pwg_query($query);
 
@@ -198,8 +197,7 @@ AND summarized = "true";';
   {
     $query = '
 DELETE FROM '.HISTORY_TABLE.' 
-WHERE date = "'.$stopdate.'" 
-AND summarized = "true";';
+WHERE date = "'.$stopdate.'"';
 
     $r = pwg_query($query);
 
@@ -247,8 +245,7 @@ function history_autoprune()
 
   $query = '
 DELETE FROM '.HISTORY_TABLE.' 
-WHERE date < "'.$limit.'"
-AND summarized = "true";';
+WHERE date < "'.$limit.'"';
 
   $r = pwg_query($query);
 

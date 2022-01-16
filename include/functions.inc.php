@@ -1,23 +1,4 @@
 <?php
-/**
- * Plugin administration menu
- */
-function PH_admin_menu($menu)
-{
-  // Retreive plugin name
-  $plugin =  PHInfos(PH_PATH);
-  $name = $plugin['name'];
-  
-  array_push($menu,
-    array(
-      'NAME' => $name,
-      'URL' => get_root_url().'admin.php?page=plugin-'.basename(PH_PATH)
-    )
-  );
-
-  return $menu;
-}
-
 
 /**
  * Function to retreive some plugin information like version and name

@@ -1,9 +1,9 @@
 {combine_script id='jquery' path='themes/default/js/jquery.min.js'}
 {combine_script id='jquery.cluetip' require='jquery' path='themes/default/js/plugins/jquery.cluetip.js'}
 
-{combine_css path= $PH_PATH|@cat:'admin/template/ph.css'}
+{combine_css path= $PH_PATH|@cat:'ph.css'}
 
-{combine_script id='datepicker.js' load='footer' require='jquery.ui.datepicker' path='themes/default/js/datepicker.js'}
+{combine_script id='datepicker.js' load='footer' require='jquery.ui.datepicker' path=$PH_PATH|@cat:'datepicker.js'}
 
 {assign var="datepicker_language" value="themes/default/js/ui/i18n/jquery.ui.datepicker-`$lang_info.code`.js"}
 

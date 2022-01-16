@@ -5,7 +5,8 @@ Version: auto
 Description: Based on original History_cleanup plugin from VDigital, this plugin allows to manually or automatically prune history table according to configurable criteria
 Plugin URI: http://piwigo.org/ext/extension_view.php?eid=604
 Author: Eric
-Author URI: http://www.infernoweb.net
+Author URI: http://www.piwigo.org
+Has Settings: true
 */
 
 /* See release history and changes in changelog.txt file */
@@ -21,12 +22,12 @@ global $conf;
 
 include_once (PH_PATH.'include/functions.inc.php');
 
-load_language('plugin.lang', PH_PATH);
+add_event_handler('loading_lang', 'PH_loading_lang');	  
+function PH_loading_lang(){
+  load_language('plugin.lang', PH_PATH);
+}
+
 $conf_PH = unserialize($conf['PruneHistory']);
-
-
-/* Plugin administration */
-add_event_handler('get_admin_plugin_menu_links', 'PH_admin_menu');
 
 
 /* Prune automation on user login */

@@ -1,0 +1,1 @@
+Ročno in samodejno izločanje tabele zgodovine.

@@ -163,7 +163,7 @@ function history_prune($startdate,$stopdate)
 DELETE
 FROM '.HISTORY_TABLE.' 
 WHERE date < "'.$stopdate.'" 
-AND date > "'.$startdate.';';
+AND date > "'.$startdate.'"';
 
     $r = pwg_query($query);
 
